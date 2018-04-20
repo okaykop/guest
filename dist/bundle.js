@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "ca154ff1854cdb7ba8ab"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "95f8bda76895054e80c6"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1549,16 +1549,7 @@ window.onload = function (params) {
         var hammer = new __WEBPACK_IMPORTED_MODULE_0__js_hammer___default.a(element); //hammer实例
         var x = 0;
         var y = 0;
-        hammer.on('panstart', function (event) {
-            x = parseInt(element.style.left);
-            y = parseInt(element.style.top);
-        });
-        hammer.on('panmove', function (event) {
-            console.log('移动');
-            element.style.top = y + event.deltaY + "px";
-            element.style.left = x + event.deltaX + "px";
-        });
-        hammer.on('panend', function (event) {});
+        hammer.get('pinch').set({ enable: true });
         hammer.on("pinchmove pinchstart pinchin pinchout", function (e) {
             if (e.type == "pinchstart") {
                 scaleIndex = transform.scale || 1;
@@ -1837,7 +1828,7 @@ function reloadApp() {
     rootWindow.location.reload();
   }
 }
-/* WEBPACK VAR INJECTION */}.call(exports, "?http://localhost:8888"))
+/* WEBPACK VAR INJECTION */}.call(exports, "?http://localhost:8080"))
 
 /***/ }),
 /* 9 */
